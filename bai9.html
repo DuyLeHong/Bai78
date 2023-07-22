@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: red;">Ví dụ</h1>
+
+    <div id="one" class="ex1">Hello</div>
+    <div id="two" class="ex1">Hello</div>
+    <div id="three" class="ex2">Hello</div>
+
+    <div id="hoa">
+        <p>Hoa Hồng</p>
+        <p>Hoa Lan</p>
+        <p>Hoa Đào</p>
+    </div>
+
+    <button id="btn_click">Click Me!</button>
+
+    <script>
+        console.log(document.querySelector('div#one'));
+
+        let divHoa = document.getElementById('hoa');
+
+        let pHoaHong = divHoa.childNodes[0];
+        let value = pHoaHong.nextSibling.childNodes[0].nodeValue;
+        alert(value);
+
+        // them node
+        var newElm1 = document.createElement('p');
+        document.body.appendChild(newElm1);
+        var text = document.createTextNode('SD18404 - Javascript');
+        newElm1.appendChild(text);
+
+        // xoa node
+        var child = document.getElementById('two');
+        document.body.removeChild(child);
+
+        // xu ly onclick cho button:
+        document.getElementById('btn_click').onclick = () => {
+            alert('Click nut bam!!!');
+        };
+
+        // function clickBtn () {
+        //     alert('Click nut bam!');
+        // }
+    </script>
+    
+</body>
+</html>
